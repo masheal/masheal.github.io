@@ -1,0 +1,50 @@
+img {
+	height: 200px;
+	width: 100%;
+	display: block;
+}
+
+a {
+	text-decoration: none;
+	color: #eeeeee;
+}
+
+a:active { 
+	font-weight: bolder;
+	color:#ffffff;
+}
+a:hover { 
+	font-weight: bold;
+	text-decoration: none;
+	color: #ffffff;
+} 
+
+.card-header {
+	text-align: center;
+}
+
+.row {
+	position: relative;
+	margin-top: 30px;
+}
+
+.interest {
+	position: relative;
+	margin-top: 30px;
+}
+
+
+body {
+	margin-bottom: 40px;
+}
+
+.col-md-4 {
+	position: relative;
+}
+
+.jumbotron {
+	position: relative;
+	width: 76%;
+	margin: 0 auto;
+	margin-top: 100px;
+}

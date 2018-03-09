@@ -1,0 +1,48 @@
+.profile-container {
+	position: relative;
+	margin: 0 auto;
+	margin-top: 100px;
+	
+}
+
+.side-bar {
+	position: relative;
+	width: 100%;
+
+}
+
+.container {
+
+}
+
+.side-bar img {
+	height: 200px;
+	width: 200px;
+
+}
+.side-bar li {
+	position: relative;
+	margin-top: 10px;
+	text-align: center;
+}
+
+.side-bar ul {
+	position: relative;
+	margin-top: 150px;
+}
+.nav-item > a{
+	
+}
+
+.col-md-3 {
+
+}
+
+.col-md-9 {
+	padding-left: 50px;
+
+}
+
+.col-md-9 button {
+	padding-top: 10px;
+}

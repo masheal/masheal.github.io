@@ -1,0 +1,14 @@
+.breadcrumb {
+	background-color: white;
+	position: relative;
+	margin-top: 60px;
+	margin-left: 25px;
+}
+
+.breadcrumb .breadcrumb-item > a{
+	color: black;
+}
+
+.breadcrumb .breadcrumb-item > a: hover {
+	color: blue;
+}

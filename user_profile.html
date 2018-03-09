@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.3/cosmo/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./profile.css">
+    <meta charset="UTF-8">
+    <title>	</title>
+</head>
+<body>
+	<header>
+		<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+			<a class="navbar-brand" href="./main_page.html">LLLearning</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollaps" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+		</nav>
+	</header>
+  
+  <div class="profile-container">
+    <div class="row">
+      <div class="col-md-3">
+      	<div class="side-bar">
+      		<div  align="center">
+        			<img class="rounded-circle" id="person-image" src="image/cs.jpg" alt="Card image">
+        	</div>
+      		<ul class="nav flex-column nav-pills">			
+      			<li class="nav-item">
+      				<a class="nav-link active first-one" href="#" onclick="changeNav(this)">Profile</a>
+      			</li>
+      			<li class="nav-item">
+      				<a class="nav-link" href="#" onclick="changeNav(this)">History</a>
+      			</li>
+      			<li class="nav-item">
+      				<a class="nav-link" href="./calender.html" onclick="changeNav(this)">Custom Calendar</a>
+      			</li>
+      			<li class="nav-item">
+      				<a class="nav-link" href="./sign_in.html" onclick="changeNav(this)">Logout</a>
+      			</li>
+      		</ul>
+      	</div>
+      </div>
+      <div class="col-md-9">
+        <div id="personal-information" class="col-md-11 order-md-1">
+        	<h4 class="mb-3">Personal Profile</h4>
+            <form class="needs-validation" onSubmit="return false;">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="firstName">First name</label>
+                <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                  Valid first name is required.
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="lastName">Last name</label>
+                <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                  Valid last name is required.
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="username">Username</label>
+              <div class="input-group">
+                <input type="text" class="form-control" id="userName" placeholder="Username" required>
+                <div class="invalid-feedback" style="width: 100%;">
+                  Your username is required.
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="email">Email <span class="text-muted">(Optional)</span></label>
+              <input type="email" class="form-control" id="email" placeholder="you@example.com" value="">
+              <div class="invalid-feedback">
+                Please enter a valid email address for shipping updates.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="address">Address</label>
+              <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+              <div class="invalid-feedback">
+                Please enter your shipping address.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
+              <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
+            </div>
+            <hr class="md-4">
+            <div class="mb-3">
+              <button class="btn btn-primary btn-lg btn-block" type="submit">save</button>
+            </div>
+            </form>
+        </div>
+        <div id="personal-history" class="col-md-11 order-md-1" style="display: none">
+          <h4 class="mb-3">Personal Profile</h4>
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">Type</th>
+                  <th scope="col">Course</th>
+                  <th scope="col">Name</th>
+                </tr>
+              </thead>
+              <tbody id="pivot">
+              </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+</body>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+<script src="./profile.js"></script>
+<script>
+  init();
+</script>
+</html>

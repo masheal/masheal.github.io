@@ -1,0 +1,103 @@
+
+
+.course {
+	display: inline-block;
+	color: white;
+	text-align: center;
+	background-color: #383a3c;
+	margin-left: 100px;
+	height: 150px;
+	width: 150px;
+}
+
+.name {
+	margin-top: 50px;
+}
+
+.arrow {
+	margin-left: 160px;
+	margin-top: 15px;
+}
+
+#calendar {
+	
+}
+* {box-sizing: border-box;}
+ul {list-style-type: none;}
+body {font-family: Verdana, sans-serif;}
+.month {
+    text-align: center;
+}
+
+.month *{
+    background-color: #007bff;
+    text-align: center;
+    position: relative;
+}
+.month .prev {
+    float: left;
+}
+
+.month .next {
+    float: right;
+
+}
+
+
+
+.weekdays li {
+    display: inline-block;
+    width: 13.6%;
+    color: #666;
+    text-align: center;
+}
+
+
+
+
+.days .col-md-1 {
+    text-align: center;
+    background: #eee;
+}
+
+
+.days li {
+    list-style-type: none;
+    display: inline-block;
+    width: 13.6%;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size:12px;
+    color: #777;
+}
+.days .col-md-1 {
+    padding: 5px;
+}
+.days .active {
+    
+    background-color: #007bff;
+    color: white !important
+}
+
+.weekdays {
+    margin: 0;
+    background-color: #666
+}
+
+.event {
+    position: relative;
+    margin-right: 5px;
+    padding: 5px;
+    border-width: 1px;
+    border-style: solid;
+    background-color: #00aaff;
+}
+
+.event .title {
+    font-size: 15px;
+}
+
+.events-main {
+        
+}
+

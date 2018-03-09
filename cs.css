@@ -1,0 +1,19 @@
+main {
+	position: relative;
+	margin-top: 20px;
+}
+
+a {
+	text-decoration: none;
+	color: #eeeeee;
+}
+
+a:active { 
+	font-weight: bolder;
+	color:#ffffff;
+}
+a:hover { 
+	font-weight: bold;
+	text-decoration: none;
+	color: #ffffff;
+} 
