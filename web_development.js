@@ -4,6 +4,10 @@ var prefix="location.href='https://www.w3schools.com/";
 var suffix="/default.asp'";
 var data = ["xml", "html", "css", "js", "jquery", "angular", "bootstrap"];
 var pass = location.search.split('pass=')[1];
+var web_id = location.search.split('id=')[1];
+if (web_id != undefined) {
+	pass = pass.split("&&")[0];
+}
 function enableClick(id) {
 	if (id > maxId)
 		return;
@@ -12,7 +16,7 @@ function enableClick(id) {
 	if (id != 1)
 		ele.childNodes[3].setAttribute("onclick", prefix+data[id-1]+suffix);
 	else
-		ele.childNodes[3].setAttribute("onclick", "window.location = './info.html'; return false;");
+		ele.childNodes[3].setAttribute("onclick", "window.location = './info.html" + (web_id === undefined ? "" : "?id=" + web_id) + "'; return false;");
 	if (id != 1 || pass == 1)
 		ele.childNodes[5].setAttribute("onclick", "enableClick("+(id+1).toString()+")");
 	ele.childNodes[3].classList.remove("disabled");

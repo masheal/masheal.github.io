@@ -1,8 +1,10 @@
+var id = location.search.split("id=")[1];
+
 function increaseProgressBar() {
 	var d = document.getElementById("progress-bar");
 	var tmp = parseInt(d.style.width.substring(0, 2)) + 10;
 	if (tmp === 100) {
-		window.location = "./web_development.html?pass=1";
+		window.location = "./web_development.html?pass=1" + (id != undefined ? "&&id=" + id : "");
 	}
 
 	d.style.width = tmp + "%";

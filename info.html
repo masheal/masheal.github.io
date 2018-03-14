@@ -9,17 +9,11 @@
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.3/cosmo/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./info.css">
     <link rel="stylesheet" type="text/css" href="./pagination.css">
+    <link rel="stylesheet" type="text/css" href="./alink.css">
 
     <title>HTML Learning</title>
   </head>
   <body>
-
-  <ul class="breadcrumb">
-    <li class="breadcrumb-item"><a href="./main_page.html">Home</a></li>
-    <li class="breadcrumb-item"><a href="./learning_plan_cs.html">Learning Plan CS</a></li>
-    <li class="breadcrumb-item"><a href="./web_development.html">Web Development</a></li>
-    <li class="breadcrumb-item active">HTML</li>
-  </ul>
 
     <header>
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -27,8 +21,26 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="./sign_up.html">Register<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="./sign_in.html">Login<span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+        </div>
       </nav>
     </header>
+
+    <ul class="breadcrumb">
+      <li class="breadcrumb-item"><a href="./main_page.html">Home</a></li>
+      <li class="breadcrumb-item"><a href="./interest.html">Interest</a></li>
+      <li class="breadcrumb-item"><a href="./learning_plan_cs.html">Computer Science</a></li>
+      <li class="breadcrumb-item"><a href="./web_development.html">Web Development</a></li>
+      <li class="breadcrumb-item active">HTML</li>
+    </ul>
 
     <div style="margin-top: -20px" class="info">
       <div class="container">
@@ -92,72 +104,76 @@
             </div>
           </div>
           <div class="modal-body">
-            <div>
-              <p style="margin-top: 20px;">1. What does HTML stand for?</p>
-              <div class="radio">
-              <label>
-                <input type="radio"  class="correct" name="question1">
-                Hyperlinks and Text Markup Language
-              </label>
-              <label>
-                <input type="radio" name="question1">
-                Hyper Text Markup Language
-              </label>
-              <label>
-                <input type="radio" name="question1">
-                Home Tool Markup Language
-              </label>
+            <fieldset>
+              <legend>1. What does HTML stand for?</legend>
+              <div class="form-group">
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="quiz11" name="quiz1" class="custom-control-input correct">
+                  <label class="custom-control-label" for="quiz11">Hyperlinks and Text Markup Language</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="quiz12" name="quiz1" class="custom-control-input">
+                  <label class="custom-control-label" for="quiz12">Hyper Text Markup Language</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="quiz13" name="quiz1" class="custom-control-input">
+                  <label class="custom-control-label" for="quiz13">Home Tool Markup Language</label>
+                </div>
               </div>
-              <p style="margin-top: 20px;">2. Who is making the Web standards?</p>
-              <div class="radio">
-              <label>
-                <input type="radio" class="correct" name="question2">
-                The World Wide Web Consortium&nbsp;&nbsp;
-              </label>
-              <label>
-                <input type="radio" name="question2">
-                Mozilla&nbsp;&nbsp;&nbsp;&nbsp;
-              </label>
-              <label>
-                <input type="radio" name="question2">
-                Microsoft&nbsp;&nbsp;&nbsp;&nbsp;
-              </label>
-              <label>
-                <input type="radio" name="question2">
-                Google
-              </label>
+
+              <legend>2. Who is making the Web standards?</legend>
+              <div class="form-group">
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="quiz21" name="quiz2" class="custom-control-input correct">
+                  <label class="custom-control-label" for="quiz21">The World Wide Web Consortium</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="quiz22" name="quiz2" class="custom-control-input">
+                  <label class="custom-control-label" for="quiz22">Mozilla</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="quiz23" name="quiz2" class="custom-control-input">
+                  <label class="custom-control-label" for="quiz23">Microsoft</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="quiz24" name="quiz2" class="custom-control-input">
+                  <label class="custom-control-label" for="quiz24">Google</label>
+                </div>
               </div>
-              <p style="margin-top: 20px;">3. Which character is used to indicate an end tag?</p>
-              <div class="radio">
-              <label>
-                <input type="radio" class="correct" name="question3">
-                /&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              </label>
-              <label>
-                <input type="radio" name="question3">
-                *&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              </label>
-              <label>
-                <input type="radio" name="question3">
-                <&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              </label>
-              <label>
-                <input type="radio" name="question3">
-                ^
-              </label>
+
+              <legend>3. Which character is used to indicate an end tag?</legend>
+              <div class="form-group">
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="quiz31" name="quiz3" class="custom-control-input correct">
+                  <label class="custom-control-label" for="quiz31">/</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="quiz32" name="quiz3" class="custom-control-input">
+                  <label class="custom-control-label" for="quiz32">*</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="quiz33" name="quiz3" class="custom-control-input">
+                  <label class="custom-control-label" for="quiz33"><</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="quiz34" name="quiz3" class="custom-control-input">
+                  <label class="custom-control-label" for="quiz34">^</label>
+                </div>
               </div>
-              <p style="margin-top:20px;">4. Inline elements are normally displayed without starting a new line.</p>
-              <div class="radio">
-              <label>
-                <input type="radio" class="correct" name="question4">
-                True&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              </label>
-              <label>
-                <input type="radio" name="question4">
-                False
-              </label>
+
+              <legend>4. Inline elements are normally displayed without starting a new line.</legend>
+              <div class="form-group">
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="quiz41" name="quiz4" class="custom-control-input correct">
+                  <label class="custom-control-label" for="quiz41">True</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="quiz42" name="quiz4" class="custom-control-input">
+                  <label class="custom-control-label" for="quiz42">False</label>
+                </div>
               </div>
-            </div>
+
+            </fieldset>
           </div>
           <div class="modal-footer">
             <div class="row">
@@ -180,5 +196,6 @@
     <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+    <script src="./id.js"></script>
   </body>
 </html>

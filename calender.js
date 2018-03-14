@@ -138,3 +138,6 @@ function init() {
   switchCalendar(null, currentMonth, currentYear);
 
 }
+function goBack() {
+    window.history.back();
+}
