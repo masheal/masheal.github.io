@@ -12,8 +12,13 @@ weekNames = ["Sun", "Mon", "Tue", "Wes", "Thu", "Fri", "Sat"];
 eventsData = {};
 currentIndex = -1;
 eventsData[currentYear * 10000 + currentMonth * 100 + parseInt(currentActive)] = [{title: "Study Plan1", description: "Finish HTML"}, {title: "Study Plan2", description: "Learn XML"}];
+eventsData[currentYear * 10000 + currentMonth * 100 + parseInt(currentActive) + 2] = [{title: "Study Plan3", description: "Learn XML"}, {title: "Project1", description: "Build a website"}];
+eventsData[currentYear * 10000 + currentMonth * 100 + parseInt(currentActive) + 5] = [{title: "Study Plan4", description: "Watch the vedio"}];
 
-
+function haveEvent(year, month, day) {
+  eventID = currentYear * 10000 + currentMonth * 100 + parseInt(day);
+  return !(eventsData[eventID] === undefined);
+}
 function saveEvent() {
   eventID = currentYear * 10000 + currentMonth * 100 + parseInt(currentActive);
   if (eventsData[eventID] === undefined)
@@ -21,6 +26,14 @@ function saveEvent() {
   eventData = eventsData[eventID];
   form_title = document.getElementById("title").value;
   form_description = document.getElementById("description").value;
+  if (form_title === undefined || form_title === "") {
+    alert("You must input the title");
+    return false;
+  }
+  if (form_description === undefined || form_description === "") {
+    alert("You must input the content");
+    return false;
+  }
   if (currentIndex < 0) {
     eventsData[eventID].push({title: form_title, description: form_description});
   } else {
@@ -28,6 +41,7 @@ function saveEvent() {
     eventsData[eventID][currentIndex].description = form_description;
   }
   renderEvent();
+  render(currentMonth, currentYear, parseInt(currentActive));
   $("#eventForm").modal('toggle');
 }
 function editEvent(index) {
@@ -71,17 +85,16 @@ function leapYear(year) {
 
 
 function becomeActive(item) {
-  item.classList.add("active");
-  document.getElementById("col_" + currentActive).classList.remove("active");
   currentActive = item.getAttribute("id").split("_")[1];
   renderEvent();
+  render(currentMonth, currentYear, parseInt(currentActive));
 }
 
 
-function render(month, year) {
+function render(month, year, cActive) {
   calendar = [];
   isSame = month === new Date().getMonth() && year === new Date().getFullYear();
-  currentActive = isSame? new Date().getDate() : 1; 
+  currentActive = (cActive != undefined ? cActive : (isSame? new Date().getDate() : 1)); 
   daysOfMonth[1] = 28;
   if (leapYear(year))
     daysOfMonth[1] = 29;
@@ -105,12 +118,16 @@ function render(month, year) {
   while (i < calendar.length) {
     res += "<div class=\"row\">";
     for (j = 0; j < 7; j++) {
-      if (calendar[i + j] === currentActive)
-        res += "<div id=\"col_" + calendar[i + j] + "\" class=\"col-md-1 active\"  onClick=\"becomeActive(this)\">" + calendar[i + j] + "</div>";  
-      else if (calendar[i + j] === "")
+      if (calendar[i + j] === "")
         res += "<div id=\"col_" + calendar[i + j] + "\" class=\"col-md-1\">" + calendar[i + j] + "</div>";
-      else
-        res += "<div id=\"col_" + calendar[i + j] + "\" class=\"col-md-1\" onClick=\"becomeActive(this)\">" + calendar[i + j] + "</div>"; 
+      else {
+        className = "col-md-1";
+        if (calendar[i + j] === currentActive)
+          className += " active";
+        else if (haveEvent(year, month, i + j - startDay + 1))
+          className += " bg-info text-white";
+        res += "<div id=\"col_" + calendar[i + j] + "\" class=\"" + className + "\"  onClick=\"becomeActive(this)\">" + calendar[i + j] + "</div>"; 
+      }    
     }
     res += "</div>";
     i += 7;
@@ -129,7 +146,7 @@ function switchCalendar(next, month, year) {
   renderEvent();
 }
 
-function init() {
+function calendarInit() {
 
   document.getElementById("prev").setAttribute("onClick", "switchCalendar(false)");
   document.getElementById("next").setAttribute("onClick", "switchCalendar(true)");

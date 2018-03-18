@@ -10,8 +10,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" type="text/css" href="./pagination.css">
     <link rel="stylesheet" type="text/css" href="./progress.css">
-    
-
+    <link rel="stylesheet" type="text/css" href="./alink.css">
     <title>Carousel Template for Bootstrap</title>
   </head>
   <body>
@@ -21,12 +20,22 @@
     <li class="breadcrumb-item active">Web Development</li>
     </ul>
 
-    <header>
+   <header>
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <a class="navbar-brand" href="./main_page.html">LLLearning</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="./sign_up.html">Register<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="./sign_in.html">Login<span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+        </div>
       </nav>
     </header>
 
@@ -201,5 +210,6 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
   <script src="./calender.js"></script>
-  <script type="text/javascript">init();</script>
+  <script src="./id.js"></script>
+  <script type="text/javascript">calendarInit();</script>
 </html>

@@ -78,6 +78,7 @@ var id = location.search.split('id=')[1];
 var switchButton = 0;
 var personalInformation = document.getElementById("personal-information");
 var personalHistory = document.getElementById("personal-history");
+var personalCalendar = document.getElementById("personal-calendar");
 var setPerson = (function(){
 	var person;
 	function renderInformation() {
@@ -96,6 +97,10 @@ var setPerson = (function(){
 			show = show + "<tr><td>" + data[i].Type + "</td><td>" + data[i].Course + "</td><td>" + data[i].Name + "</td></tr>";
 		}
 		document.getElementById("pivot").innerHTML = show;
+	}
+
+	function renderCalendar() {
+
 	}
 	return function(p) {
 		person = p;
@@ -129,11 +134,15 @@ function switchGo(name) {
 	if (name === 'History') {
 		personalInformation.style.display = 'none';
 		personalHistory.style.display = 'block';
-		switchButton = 1;
+		personalCalendar.style.display = 'none';
 	} else if (name === 'Profile') {
 		personalInformation.style.display = 'block';
 		personalHistory.style.display = 'none';
-		switchButton = 0;
+		personalCalendar.style.display = 'none';
+	} else if (name === 'Custom Calendar') {
+		personalCalendar.style.display = 'block';
+		personalInformation.style.display = 'none';
+		personalHistory.style.display = 'none';
 	}
 }
 

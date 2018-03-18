@@ -4,6 +4,7 @@
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.3/cosmo/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./profile.css">
+    <link rel="stylesheet" type="text/css" href="./calender.css">
     <meta charset="UTF-8">
     <title>	</title>
 </head>
@@ -42,7 +43,7 @@
       				<a class="nav-link" href="#" onclick="changeNav(this)">History</a>
       			</li>
       			<li class="nav-item">
-      				<a class="nav-link" href="./calender.html" onclick="changeNav(this)">Custom Calendar</a>
+      				<a class="nav-link" href="#" onclick="changeNav(this)">Custom Calendar</a>
       			</li>
       			<li class="nav-item">
       				<a class="nav-link" href="./sign_in.html" onclick="changeNav(this)">Logout</a>
@@ -121,6 +122,71 @@
               </tbody>
           </table>
         </div>
+        <div id="personal-calendar" class="col-md-12 order-md-1" style="display: none; margin-left: 150px;">
+          <div class="container header">
+            <div class="row month"> 
+                <div id="prev" class="col-md-1 prev">&#10094;</div>
+                <div class="col-md-5">
+                  <span id="month-name">August</span><br>
+                  <span id="year-name" style="font-size:18px">2017</span>
+                </div>
+                <div id="next" class="col-md-1 next">&#10095;</div>
+            </div>
+
+            <div class="row">
+               <div id="days" class="col-md-12 days">  
+              </div>
+            </div>
+          </div>
+          <div class="container events-main">
+            <div class="row">
+              <div class="col-md-7">
+                <div class="event-header">
+                </div>
+              </div>
+            </div>
+            
+            <div class="row">
+              <div id="events" class="col-md-7">
+              </div>
+            </div>
+          </div>
+
+
+          <div id="eventForm" class="modal fade">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <div class="text-center">
+                    <h2 class="modal-title">Event</h2>
+                  </div>
+                </div>
+                <div class="modal-body">
+                  <div>
+                    <div class="form-group">
+                      <label for="title">Title:</label>
+                      <input type="text" class="form-control" id="title">
+                    </div>
+                    <div class="form-group">
+                      <label for="description">Description:</label>
+                      <textarea class="form-control" rows="5" id="description"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <button class="btn btn-primary btn-lg btn-block" type="submit" onclick="saveEvent()">Submit</button>
+                        </div>
+                        <div class="col-md-6">
+                          <button class="btn btn-lg btn-block" data-dismiss="modal">Cancel</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -129,11 +195,16 @@
 
 </body>
 
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
 <script src="./profile.js"></script>
 <script src="./id.js"></script>
+<script src="./calender.js"></script>
 <script>
   init();
+  calendarInit();
 </script>
 </html>
