@@ -1,0 +1,60 @@
+<html>
+<header>
+   <title>Music Player</title>
+   <link rel="stylesheet" type="text/css" href="ipod.css"/>
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+</header>
+<body>
+   <div id="screen">
+     <div class="head-bar">
+      <div class="back-button">
+      	<a href="songs.html">
+      		<button><i class="material-icons">arrow_back</i></button>
+        </a>
+      </div>
+   </div>
+   <div class="player-album-art">
+   <img src="image/we don't talk anymore.jpg" alt="Currents Album Cover" height="260" width="260"/>
+	</div>
+   <div class="player-song-info">
+      <p id="player-song-name">We Don't Talk Anymore</p>
+      <p><em>Voicenotes</em> - Charlie Puth</p>
+   </div>
+   <div class="song-control">
+   <div class="volume-bar">
+   <input id="bar-length" type="range" value="0" min="0" max="180" oninput="slide(this.value)" ouput="slide(this.value)" onchange="slide(this.value)">
+   </div>
+   <div id="play-time">0:00</div>
+   <div id="whole-time">3:00</div>
+   <div class="player-controls">
+      <button onclick="prevSong()"><i class="material-icons">skip_previous</i></button>
+      <button onclick="switchPlay()"><i id="switchPlay" class="material-icons">play_arrow</i></button>
+      <button onclick="nextSong()"><i class="material-icons">skip_next</i></button>
+   </div>
+   <div class="volume-control">
+   <div class="volume-level">
+      <div id="vl0"></div>
+      <div id="vl1"></div>
+      <div id="vl2"></div>
+      <div id="vl3"></div>
+      <div id="vl4"></div>
+      <div id="vl5"></div>
+   </div>
+   <div class="volume-down">
+   	<i class="material-icons">volume_down</i>
+   </div>
+   </div>
+   </div>
+   <div class="buttons">
+   <button id="volDown" onclick="volDown()">&mdash;</button>
+   <button id="volUp"onclick="volUp()">+</button>
+   </div>
+
+</div>
+<script src="ipod.js"></script>
+</body>
+</html>
+<!--
+* bg iphone img is 363x762px
+* iphone 'screen' is apprx 300x530 -->
