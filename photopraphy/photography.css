@@ -1,0 +1,14 @@
+img{
+	width: 40%;
+	float: left;
+	margin: 5%
+}
+
+p{
+	font-family: Playfair;
+	margin-left: 1.666%;
+	font-size: 20px;
+	border-bottom: 2px solid #f1f1f1;
+	width: 30%;
+	padding-bottom: 20px;
+}
