@@ -1,31 +1,94 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Photo Blog</title>
-	<link rel="stylesheet" type="text/css" href="./photography.css">
-	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,900" rel="stylesheet">
-</head>
+	<title>Image Gallery</title>
+	<link rel="stylesheet" type="text/css" href="Practise.css">
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    <style type="text/css">
+    body { padding-top: 70px; }
+	</style>
+
 <body>
-	<p>SHENG MA</p>
+	<nav class="navbar fixed-top navbar-dark bg-dark navbar-expand-lg navbar-light bg-light">
+		<div class="container">
+			<a class="navbar-brand" href="#"><i class="material-icons">insert_photo</i>Image Gallery</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		    	<span class="navbar-toggler-icon"></span>
+		  	</button>
 
-	<img src="images/1.jpg">
-	<img src="images/2.jpg">
-	<img src="images/3.jpg">
-	<img src="images/4.jpg">
-	<img src="images/5.jpg">
-	<img src="images/6.jpg">
-	<img src="images/8.jpg">
-	<img src="images/9.jpg">
-	<img src="images/10.jpg">
-	<img src="images/11.jpg">
-	<img src="images/12.jpg">
-	<img src="images/13.jpg">
-	<img src="images/14.jpg">
-	<img src="images/15.jpg">
-	<img src="images/16.jpg">
-	<img src="images/17.jpg">
-	<img src="images/18.jpg">
-	<img src="images/19.jpg">
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		    <ul class="navbar-nav mr-auto">
+		      <li class="nav-item active">
+		        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="#">Contact</a>
+		      </li>
+		    </ul>
+			<ul class="nav navbar-nav navbar-right">
+		      <li class="nav-item">
+		        <a class="nav-link" href="#">Sign Up</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="#">Login</a>
+		      </li>
+		    </ul>
+		    </div>
+		</div>
+	</nav>
 
+	<div class="container">
+		<div class="jumbotron">
+		  <h1 class="display-4"><i class="fas fa-camera-retro"></i> My photography gallery!</h1>
+		  <p class="lead">Like these photos? Follow me on Instgram!</p>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-4 col-md-6">
+				<img class="img-thumbnail" src="./images/1.jpg">
+			</div>
+			<div class="col-lg-4 col-md-6">
+				<img class="img-thumbnail" src="./images/14.jpg">
+			</div>
+			<div class="col-lg-4 col-md-6">
+				<img class="img-thumbnail" src="./images/15.jpg">
+			</div>
+			<div class="col-lg-4 col-md-6">
+				<img class="img-thumbnail" src="./images/4.jpg">
+			</div>
+			<div class="col-lg-4 col-md-6">
+				<img class="img-thumbnail" src="./images/5.jpg">
+			</div>
+			<div class="col-lg-4 col-md-6">
+				<img class="img-thumbnail" src="./images/6.jpg">
+			</div>
+			<div class="col-lg-4 col-md-6">
+				<img class="img-thumbnail" src="./images/8.jpg">
+			</div>
+			<div class="col-lg-4 col-md-6">
+				<img class="img-thumbnail" src="./images/9.jpg">
+			</div>
+			<div class="col-lg-4 col-md-6">
+				<img class="img-thumbnail" src="./images/16.jpg">
+			</div>
+			<div class="col-lg-4 col-md-6">
+				<img class="img-thumbnail" src="./images/11.jpg">
+			</div>
+			<div class="col-lg-4 col-md-6">
+				<img class="img-thumbnail" src="./images/17.jpg">
+			</div>
+			<div class="col-lg-4 col-md-6">
+				<img class="img-thumbnail" src="./images/13.jpg">
+			</div>
+		</div>
+
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 </body>
 </html>
