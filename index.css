@@ -4,6 +4,11 @@
 	margin-left: 10%;
 }
 
+.jumbotron.text-center{
+	padding: 1.5em 1em 1em;
+	margin-bottom: 0;
+}
+
 #resume2{
 	padding: 6px 24.235px;
 }
