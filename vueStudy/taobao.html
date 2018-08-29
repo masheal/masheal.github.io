@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>淘宝</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+    <script type="text/javascript" src="vue.js"></script>
+    <style>
+        *{margin: 0;padding: 0;list-style: none;}
+        #outNode {
+            width: 520px;height: 280px;position: absolute;top: 0;bottom: 0;left: 0;right: 0;margin: auto;
+            overflow: hidden;background: rgb(67, 112, 49);
+        }
+        #outNode>div {
+            width: 100%;height: 100%;position: absolute;
+        }
+        input.active {
+            background: red;
+        }
+        .sheng-transition{
+            transform: translateX(0);transition: 1s;
+        }
+        .sheng-enter{
+            transform: translateX(-520px);
+        }
+        .sheng-leave{
+            transform: translateX(520px);
+        }
+        .gnehs-transition{
+            transform: translateX(0);transition: 1s;
+        }
+        .gnehs-enter{
+            transform: translateX(520px);
+        }
+        .gnehs-leave{
+            transform: translateX(-520px);
+        }
+        /* .sheng-transition{
+            opacity: 1;
+            transition: 1s;
+        }
+        .sheng-enter{
+            opacity: 0;
+        }
+        .sheng-leave{
+            opacity: 0;
+        } */
+        .options {
+            height: 13px;border-radius: 6.5px;background: rgba(255, 255, 255, 0.3);
+            position: absolute;left: 50%;transform: translate(-50%);bottom: 15px;
+            z-index: 10;
+        }
+        .options>li.active {
+            background: #fe5001;
+        }
+        .options>li {
+            width: 8px;
+            height: 8px;
+            margin-left: 3px;
+            margin-right: 3px;
+            background: #ffffff;
+            border-radius: 50%;
+            cursor: pointer;
+            margin-top: 2.5px;
+            float: left;
+        }
+        #outNode .imageBox {
+            width: 100%;height: 100%;background-size: cover;position: absolute;top: 0;left: 0;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" v-for='i in name' :value='i' :class='index==$index?"active":""' @click='add($index)'>
+    <input type="button" @click='left($index)'>
+    <input type="button" @click='right($index)'>
+    <div id="outNode">
+        <div class='imageBox' v-for='i in image' :style='{backgroundImage:"url("+i+")"}' v-show='index==$index?true:false' transition='mode'></div>
+            <ol class="options" :style='{width:image.length*14+"px"}'>
+                <li v-for='i in image'  :class='index==$index?"active":""' @click='change($index)'></li>
+            </ol>
+    </div>
+    <script type="text/javascript">
+        new Vue({
+            el: 'body',
+            data:{
+                name:['jack','james','mike'],
+                index:0,
+                over:false,
+                image:['1.jpeg','2.jpg','3.jpg','4.jpg'],
+                mode:'sheng'
+            },
+            methods:{
+                change(thisNode) {
+                    if (thisNode > this.index) {
+                        this.mode = 'sheng';
+                        this.index = thisNode;
+                    } else {
+                        this.mode = 'gnehs';
+                        this.index = thisNode;
+                    };
+                },
+                add(i) {
+                    console.log(i)
+                    if(this.over) return;
+                    this.over = true;
+                    this.index = i;
+                    var _this = this;
+                    setTimeout(function(){
+                        _this.over = false;
+                    },1000);
+                },
+                left(i) {
+                    console.log(i)
+                    if ((i - 1) < 0) {
+                        this.index = this.background.length - 1
+                    } else {
+                        this.index = i - 1
+                    };
+                },
+                right(i) {
+                    if (i == 2) {
+                        this.index = 0
+                    } else {
+                        this.index = i + 1
+                    };
+                }
+            }
+        })
+    </script>
+</body>
+</html>
