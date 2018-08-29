@@ -1,0 +1,146 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title>
+    <script type="text/javascript" src='vue.js'>
+    </script> 
+    <style type="text/css">
+*{margin: 0;padding: 0;list-style: none;}
+.outNode{
+	width: 520px;height: 280px;position: absolute;left: 0;top: 0;right: 0;bottom: 0;margin: auto;border: 1px solid black;background: black;overflow: hidden;
+	}
+.outNode .imageBox{width: 100%;height: 100%;position: absolute;left: 0;top: 0;background-size:cover }
+.selectNode{
+	height: 13px;background: rgba(255,255,255,0.3);
+	width: 100px;
+	position: absolute;left: 50%;transform:translate(-50%);bottom: 15px;border-radius: 6.5px;
+	z-index: 10;
+}
+.selectNode li{width: 8px;height: 8px;background: white;border-radius: 50%;cursor: pointer;margin-top: 2.5px;margin-left: 3px;margin-right: 3px;float: left;}
+.selectNode li.active{
+	background: #fe5001;
+}
+	.leo-transition{
+		transition:0.5s;
+		transform:translateX(0px);
+	}
+	.leo-enter{
+		transform:translateX(520px);
+	}
+	.leo-leave{
+		transform:translateX(-520px);
+	}
+
+	.sky-transition{
+		transition:0.5s;
+		transform:translateX(0px);
+	}
+	.sky-enter{
+		transform:translateX(-520px);
+	}
+	.sky-leave{
+		transform:translateX(520px);
+	}
+
+    </style>
+
+</head>
+<body>
+	<input type="file" name="" @change='cg' class='fileNode'>
+	<a href="javascript:;" @click='left'>left</a>
+	<a href="javascript:;" @click='right'>right</a>
+	<div class='outNode'>
+		<div v-for='i in imageNode' class='imageBox' :style='{backgroundImage:"url("+i+")"}' v-show="index==$index?true:false" :transition='need'></div>
+		<ol class='selectNode' :style='{width:imageNode.length*14+"px"}' >
+			<li v-for='i in imageNode' :class='index==$index?"active":""' @click='add($index)'></li>
+		</ol>
+	</div>
+</body>
+<script type="text/javascript">
+	var file = new Vue({
+		el:'.fileNode',
+		methods:{
+			cg(){
+				//console.log(big)
+				var _big = big;
+				//console.log(this.$el.files[0])
+				var formData = new FormData();
+				formData.append('pic',this.$el.files[0]);
+				fetch(`http://localhost:8213/add`,{
+						method:'POST',
+						body:formData
+					}).then((res)=>{
+						res.json(()=>{
+							}).then((res)=>{
+								var {ok} = res;
+								if(ok){
+								//	console.log(res)
+									let {data} = res;
+									//console.log(data)
+									//console.log(_big)
+									//imgNode.src = dataUrl;
+									//var img = data;
+									//console.log(img);
+									_big.$data.imageNode.push(data)
+									//console.log(_big.$data.imageNode);
+								}
+								else{
+									alert('失败了');
+								}
+							
+						}).catch(()=>{
+							//console.log(123132)
+							console.log('服务器错误')
+
+						})
+				})
+				
+			}
+		}
+	});
+
+	window.big = new Vue({
+		el:'body',
+		data:{
+			imageNode:['1.jpeg','2.jpg','3.jpg','4.jpg'],
+			index:0,
+			need:'sky',
+			
+		},
+		methods:{
+			
+			left(){
+				this.need ='sky';
+				this.index--;
+				if(this.index == -1){
+					this.index = this.imageNode.length - 1; 
+				}
+			},
+			right(){
+				this.need ='leo';
+				this.index++;
+				if(this.index == this.imageNode.length){
+					this.index = 0;
+				}
+			},
+			add(needIndex){
+				if(this.index < needIndex){
+					this.need ='leo'
+				}
+				else{
+					this.need ='sky';
+				}
+				this.index = needIndex;
+				//console.log(needIndex)
+				//this.index = needIndex;
+				//console.log(this.index)
+			}
+		}
+	})
+
+</script>
+
+
+
+</html>
