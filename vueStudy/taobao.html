@@ -95,11 +95,10 @@
                 change(thisNode) {
                     if (thisNode > this.index) {
                         this.need = 'sheng';
-                        this.index = thisNode;
                     } else {
                         this.need = 'gnehs';
-                        this.index = thisNode;
-                    };
+                    }
+                    this.index = thisNode;
                 },
                 add(i) {
                     console.log(i)

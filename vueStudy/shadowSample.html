@@ -23,8 +23,8 @@
 		document.addEventListener('mousemove',function(e){
 			var ev = e || event;
 			//console.log(ev.clientX,ev.clientY);
-			var needY = ev.clientY/innerHeight;
-			var needX = ev.clientX/innerWidth;
+			var needY = event.clientY/innerHeight;
+			var needX = event.clientX/innerWidth;
 			//console.log(-30+60*needY)
 
 			_this.el.style.boxShadow = (30+(-60*needX))+'px '+(30+(-60*needY))+'px 30px 0px black';
