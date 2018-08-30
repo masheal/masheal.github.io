@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>淘宝</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
     <script type="text/javascript" src="vue.js"></script>
     <style>
         *{margin: 0;padding: 0;list-style: none;}
@@ -72,61 +71,67 @@
     </style>
 </head>
 <body>
-    <!-- <input type="button" v-for='i in name' :value='i' :class='index==$index?"active":""' @click='add($index)'>
+    <input type="button" v-for='i in name' :value='i' :class='index==$index?"active":""' @click='add($index)'>
     <input type="button" @click='left($index)'>
-    <input type="button" @click='right($index)'> -->
+    <input type="button" @click='right($index)'>
     <div id="outNode">
-        <div class='imageBox' v-for='i in image' :style='{backgroundImage:"url("+i+")"}' v-show='index==$index?true:false' transition='need'></div>
+        <div class='imageBox' v-for='i in image' :style='{backgroundImage:"url("+i+")"}' v-show='index==$index?true:false' :transition='need'></div>
             <ol class="options" :style='{width:image.length*14+"px"}'>
                 <li v-for='i in image'  :class='index==$index?"active":""' @click='change($index)'></li>
             </ol>
     </div>
-    <script type="text/javascript">
-        new Vue({
-            el: 'body',
-            data:{
-                name:['jack','james','mike'],
-                index:0,
-                over:false,
-                image:['1.jpeg','2.jpg','3.jpg','4.jpg'],
-                need:'sheng'
-            },
-            methods:{
-                change(thisNode) {
-                    if (thisNode > this.index) {
-                        this.need = 'sheng';
-                    } else {
-                        this.need = 'gnehs';
-                    }
-                    this.index = thisNode;
-                },
-                add(i) {
-                    console.log(i)
-                    if(this.over) return;
-                    this.over = true;
-                    this.index = i;
-                    var _this = this;
-                    setTimeout(function(){
-                        _this.over = false;
-                    },1000);
-                },
-                // left(i) {
-                //     console.log(i)
-                //     if ((i - 1) < 0) {
-                //         this.index = this.background.length - 1
-                //     } else {
-                //         this.index = i - 1
-                //     };
-                // },
-                // right(i) {
-                //     if (i == 2) {
-                //         this.index = 0
-                //     } else {
-                //         this.index = i + 1
-                //     };
-                // }
-            }
-        })
-    </script>
 </body>
+<script type="text/javascript">
+    new Vue({
+        el: 'body',
+        data:{
+            name:['jack','james','mike'],
+            index:0,
+            over:false,
+            image:['1.jpeg','2.jpg','3.jpg','4.jpg'],
+            need:'sheng'
+        },
+        methods:{
+            change(thisNode) {
+                var _this = this;
+                if(this.over) return;
+                this.over = true;
+                if (thisNode > this.index) {
+                    this.need = 'gnehs';
+                } else {
+                    this.need = 'sheng';
+                }
+                this.index = thisNode;
+                setTimeout(() => {
+                    _this.over = false;
+                }, 1000);
+            },
+            add(i) {
+                console.log(i)
+                if(this.over) return;
+                this.over = true;
+                this.index = i;
+                var _this = this;
+                setTimeout(function(){
+                    _this.over = false;
+                },1000);
+            },
+            // left(i) {
+            //     console.log(i)
+            //     if ((i - 1) < 0) {
+            //         this.index = this.background.length - 1
+            //     } else {
+            //         this.index = i - 1
+            //     };
+            // },
+            // right(i) {
+            //     if (i == 2) {
+            //         this.index = 0
+            //     } else {
+            //         this.index = i + 1
+            //     };
+            // }
+        }
+    })
+</script>
 </html>
