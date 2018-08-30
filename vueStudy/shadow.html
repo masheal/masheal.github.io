@@ -20,16 +20,12 @@
 </body>
 <script type="text/javascript">
     Vue.directive('shadow',function(){
-        // console.log(this.el);
         var _this = this;
         document.addEventListener('mousemove',function(e){
             var ev = e || event;
-            // console.log(event)
             var needX = ev.clientX/innerWidth;
             var needY = ev.clientY/innerHeight;
-            // console.log(needX,needY)
-            _this.el.style.boxShadow = (10+(-20*needX))+'px'+(10+(-20*needY))+'px 10px 0 black';
-            console.log(_this.el.style)
+            _this.el.style.boxShadow = (30+(-60*needX))+'px '+(30+(-60*needY))+'px 30px 0 black';
         })
     })
     new Vue({
