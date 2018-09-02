@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <div>
+      <slide :slide='slideNode'></slide>
       <tab :tab='tabNode' ></tab>
     </div>
   </div>
@@ -8,6 +9,7 @@
 
 <script>
 import tab from './tab.vue'
+import slide from './slide.vue'
 
 export default {
   data () {
@@ -18,11 +20,15 @@ export default {
         bottomNode:-56,
         opacityN:1,
         interval:null
+      },
+      slideNode:{
+        img:['./src/images/1.jpg','./src/images/2.jpeg','./src/images/3.jpg','./src/images/4.jpg','./src/images/5.jpg'],
       }
     }
   },
   components:{
-    tab
+    tab,
+    slide
   }
 }
 </script>
