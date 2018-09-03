@@ -1,6 +1,6 @@
 <template>
     <ul class="slide">
-        <li v-for='i in imgs' :style='{backgroundImage:"url("+i+")",backgroundSize:"cover"}'></li>
+        <li v-for='i in imgs' :style='{backgroundImage:"url("+i+")",backgroundSize:"cover"}' :class='allClass[$index]'></li>
     </ul>
 </template>
 
@@ -9,7 +9,8 @@ export default {
     props:['slide'],
     data () {
         return {
-            imgs:[]
+            imgs:[],
+            allClass:[]
         }
     },
     methods: {
@@ -17,6 +18,9 @@ export default {
     },
     ready () {
         this.imgs = this.slide.img
+        for(var i = 0; i < this.imgs.length; i++){
+            this.allClass.push('s' + i)
+        }
     }
 }
 </script>
