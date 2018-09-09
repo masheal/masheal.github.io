@@ -22,7 +22,8 @@ export default {
         interval:null
       },
       slideNode:{
-        img:['./src/images/1.jpg','./src/images/2.jpeg','./src/images/3.jpg','./src/images/4.jpg','./src/images/5.jpg'],
+        img:['./src/images/1.jpg','./src/images/2.jpeg','./src/images/3.jpg','./src/images/4.jpg','./src/images/5.jpg','./src/images/6.jpeg','./src/images/7.jpeg'],
+        index:0
       }
     }
   },
