@@ -10,7 +10,8 @@
     <script type="text/javascript" src="bower_components/vue/dist/vue.js"></script>
     <script src="https://cdn.bootcss.com/vue-router/3.0.1/vue-router.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script> -->
+    <script type="text/javascript" src='vue-resource.js'></script>
 </head>
 
 <body>
@@ -21,38 +22,46 @@
     </div>
 
     <template id="one">
-        <aaa :msg='$route'></aaa>
+        <aaa :msg='$route'></aaa><!--$route什么意思?-->
     </template>
 
     <template id="bbb">
-        <!-- {{msg.params}} -->
+        <div>
+            {{msg.params}}<br>
+            {{text}}
+        </div>
     </template>
 </body>
 <script type="text/javascript">
-    Vue.filter('json', (val) => {
-        console.log(val)
-    })
-
     var routes = [{
         path: '/animation/id/:Id',
         component: {
             template: '#one',
             components: {
                 'aaa': {
-                    template: '#bbb',
+                    template: '#bbb', //data 与 template'aaa''bbb'之间的关系
                     props: [
-                        'msg'
+                        'msg',
                     ],
-                    // data: {
-                    //     text: ''
-                    // },
+                    data() {
+                        return {
+                            text: ''
+                        }
+                    },
                     mounted() {
-                        // console.log(this.$http)
                         this.$http.get('http://localhost:1208/main', {
                             id: this.msg.params.Id
                         }).then((res) => {
-                            // this.text = res.data.data
-                            console.log(res.data)
+                            this.text = res.data.data
+                        }).catch(() => {
+                            console.log('失败了')
+                        })
+                    },
+                    updated() {
+                        this.$http.get('http://localhost:1208/main', {
+                            id: this.msg.params.Id
+                        }).then((res) => {
+                            this.text = res.data.data
                         }).catch(() => {
                             console.log('失败了')
                         })
