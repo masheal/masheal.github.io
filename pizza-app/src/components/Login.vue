@@ -21,6 +21,7 @@
     </div>
 </template>
 <script>
+import axios from 'axios'
 export default {
     data () {
         return { 
@@ -28,9 +29,31 @@ export default {
             password:''
         }
     },
+    beforeRouteEnter:(to, from, next) => {
+        next(vm => vm.$store.dispatch("setUser",null))
+    },
     methods: {
         onSubmit(){
+            axios.get('/users.json').then(res => {
+                const data = res.data
+                const users = []
+                for(let key in data){
+                    const user = data[key]
+                    users.push(user)
+                }
 
+                let result = users.filter((user) => {
+                    return user.password === this.password && user.email === this.email
+                })
+
+                if(result != null && result.length > 0){
+                    this.$store.dispatch("setUser",result[0].email)
+                    this.$router.push({name:'homeLink'})
+                }else{
+                    alert('Wrong Account or Password')
+                    this.$store.dispatch("setUser",null)
+                }
+            })
         }
     }
 }
