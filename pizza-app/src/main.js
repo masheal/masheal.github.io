@@ -8,7 +8,7 @@ import { store } from './store/store'
 Vue.use(VueRouter)
 
 // axios default URL
-axios.defaults.baseURL = 'https://wd0074869541ehoyhi.wilddogio.com/'
+axios.defaults.baseURL = 'https://wd5122471827bdpsca.wilddogio.com/'
 
 // set Vue prototype(axios can be used in any Vue template)
 Vue.prototype.http = axios
