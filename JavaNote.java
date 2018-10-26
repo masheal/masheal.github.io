@@ -11,9 +11,9 @@ PriorityQueue<Cell> minHeap = new PriorityQueue<Cell>(k, new Comparator<Cell>(){
   });
 
 StringBuilder:      char[]          List<String>    PriorityQueue     HashSet     HashMap         
-  append                            .add             .offer(e)         .add        .put
+  .append                           .add            .offer(e)         .add        .put
   .length()          .length        .size()         .size()
-                                    .remove          .poll()
+  .deleteCharAt()                   .remove         .poll()
                                                     .getValue()                   .get
                                                                       .contains   .containsKey
                                                                                                   
