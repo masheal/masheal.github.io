@@ -14,7 +14,7 @@ StringBuilder:      char[]          List<String>    PriorityQueue     HashSet   
   .append                           .add            .offer(e)         .add        .put
   .length()          .length        .size()         .size()
   .deleteCharAt()                   .remove         .poll()
-                                                    .getValue()                   .get
+  .toString()        new String()                   .getValue()                   .get
                                                                       .contains   .containsKey
                                                                                                   
 String
