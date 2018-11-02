@@ -40,3 +40,8 @@ static class Element {
     this.compredValues = new ArrayList<>();
   }
 }
+
+BFS2
+1 inital state
+2 expansion/generation rule
+3 termination condition
