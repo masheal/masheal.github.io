@@ -16,6 +16,7 @@ StringBuilder:      char[]          List<String>    PriorityQueue     HashSet   
   .deleteCharAt()                   .remove         .poll()
   .toString()        new String()                   .getValue()                   .get
                                                                       .contains   .containsKey
+                                    .get()
                                                                                                   
 String
 .length()
@@ -45,3 +46,16 @@ BFS2
 1 inital state
 2 expansion/generation rule
 3 termination condition
+
+// int[] to String
+Arrays.toString()
+// Integer to String
+String.valueOf()
+// String to Integer
+Integer.parseInt()
+//two char to string
+String s = new StringBuilder().append(char1).append(char2).toString();
+
+// ASC2
+num - ASC2 value
+1   -    49
