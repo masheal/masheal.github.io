@@ -59,3 +59,7 @@ String s = new StringBuilder().append(char1).append(char2).toString();
 // ASC2
 num - ASC2 value
 1   -    49
+
+private int pivotIndex (int left, int right) {
+  return left + (int) (Math.random() * (right - left + 1));
+}
