@@ -43,12 +43,13 @@
         .canvas {
             margin: 0 auto;
             display: block;
+            padding-top: 7em;
         }
 
         img#logo {
-            width: 5em;
+            width: 8.5em;
             background-size: cover;
-            border-radius: 50%;
+            border-radius: 19%;
             box-shadow: 0px 0px 40px rgba(255, 255, 255);
             opacity: 1;
             margin: 0 auto;
@@ -91,6 +92,7 @@
             width: 100%;
             font-weight: bold;
         }
+
     </style>
 
 </head>
@@ -102,14 +104,14 @@
 </div>
 <canvas class="canvas" width="1820" height="905"></canvas>
 <p class="text" style="color: purple;">
-    We fell in love
+    我们已经恋爱
     <br/>
     <span id="span_dt_dt"></span>
 </p>
 <script language="javascript">
     function show_date_time() {
         window.setTimeout("show_date_time()", 1000);
-        BirthDay = new Date("6/23/2019 23:40:00");//这个日期是可以修改的
+        BirthDay = new Date("6/23/2019 17:00:00");//这个日期是可以修改的
         today = new Date();
         timeold = (today.getTime() - BirthDay.getTime());
         sectimeold = timeold / 1000
@@ -668,8 +670,8 @@
 </script>
 <!-- 音乐可改 -->
 <!-- <audio autoplay="autoplay" loop="loop">
-    <source src="music/perfect.mp3" type="audio/mpeg">
+    <source src="./music/perfect.mp3" type="audio/mpeg">
 </audio> -->
-<embed src="music/perfect.mp3" autostart="true" loop="true" hidden="true"></embed>
+<embed src="./music/perfect.mp3" autostart="true" loop="true" hidden="true"></embed>
 </body>
 </html>
