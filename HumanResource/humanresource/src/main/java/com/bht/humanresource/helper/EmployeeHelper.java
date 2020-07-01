@@ -51,7 +51,24 @@ public class EmployeeHelper {
             return;
         }
         Employee employee = employeeOptional.get();
-        employee.setName(temp.getName());
+        if (temp.getName() != null) {
+            employee.setName(temp.getName());
+        }
+        if (temp.getJob() != null) {
+            employee.setJob(temp.getJob());
+        }
+        if (temp.getManager() != null) {
+            employee.setManager(temp.getManager());
+        }
+        if (temp.getHireDate() != null) {
+            employee.setHireDate(temp.getHireDate());
+        }
+        if (temp.getSalary() != null) {
+            employee.setSalary(temp.getSalary());
+        }
+        if (temp.getDeptId() != null) {
+            employee.setDeptId(temp.getDeptId());
+        }
         repo.save(employee);
     }
 

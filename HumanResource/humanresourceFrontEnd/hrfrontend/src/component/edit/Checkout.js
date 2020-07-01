@@ -80,6 +80,19 @@ function getStepContent(step, handleSubmit) {
   }
 }
 
+const inputParsers = {
+  date(input) {
+    const [month, day, year] = input.split('/');
+    return `${year}-${month}-${day}`;
+  },
+  uppercase(input) {
+    return input.toUpperCase();
+  },
+  number(input) {
+    return parseFloat(input);
+  },
+};
+
 export default function Checkout() {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
@@ -92,9 +105,8 @@ export default function Checkout() {
     setActiveStep(activeStep - 1);
   };
 
-  const handleSubmit = (object) => {
-    let json = JSON.stringify(object);
-    // console.log(json);
+  const handleSubmit = (data) => {
+    console.log(JSON.stringify(data));
   }
 
   return (

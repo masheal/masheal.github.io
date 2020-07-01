@@ -21,13 +21,50 @@ class AddressForm extends Component {
   }
 
   componentDidUpdate () {
-    console.log(this.state);
-    this.props.handleSubmit(this.state);
+    if (this.props.handleSubmit) {
+      this.props.handleSubmit(this.state);
+    }
   }
 
-  handleChange = (ele) => {
+  handleIdChange = (id) => {
     this.setState({
-      ele: ele.target.value
+      id: id.target.value
+    })
+  } 
+
+  handleNameChange = (name) => {
+    this.setState({
+      name: name.target.value
+    })
+  } 
+
+  handleJobChange = (job) => {
+    this.setState({
+      job: job.target.value
+    })
+  } 
+
+  handleManagerChange = (manager) => {
+    this.setState({
+      manager: manager.target.value
+    })
+  } 
+
+  handleHireDateChange = (hireDate) => {
+    this.setState({
+      hireDate: hireDate.target.value
+    })
+  } 
+
+  handleSalaryChange = (salary) => {
+    this.setState({
+      salary: salary.target.value
+    })
+  } 
+
+  handleDeptidChange = (deptId) => {
+    this.setState({
+      deptId: deptId.target.value
     })
   } 
 
@@ -46,7 +83,7 @@ class AddressForm extends Component {
               label="Id"
               fullWidth
               autoComplete="given-name"
-              onChange={this.handleChange}
+              onChange={this.handleIdChange}
             />
           </Grid>
           <Grid item xs={12} sm={6}>
@@ -57,7 +94,7 @@ class AddressForm extends Component {
               label="Name"
               fullWidth
               autoComplete="family-name"
-              onChange={this.handleChange}
+              onChange={this.handleNameChange}
             />
           </Grid>
           <Grid item xs={12} sm={6}>
@@ -68,7 +105,7 @@ class AddressForm extends Component {
               label="Job"
               fullWidth
               autoComplete="shipping address-level2"
-              onChange={this.handleChange}
+              onChange={this.handleJobChange}
             />
           </Grid>
           <Grid item xs={12} sm={6}>
@@ -77,7 +114,7 @@ class AddressForm extends Component {
               name="manager"
               label="Manager"
               fullWidth
-              onChange={this.handleChange}
+              onChange={this.handleManagerChange}
             />
           </Grid>
           <Grid item xs={12} sm={6}>
@@ -88,7 +125,7 @@ class AddressForm extends Component {
               label="Hire Date"
               fullWidth
               autoComplete="shipping postal-code"
-              onChange={this.handleChange}
+              onChange={this.handleHireDateChange}
             />
           </Grid>
           <Grid item xs={12} sm={6}>
@@ -99,7 +136,7 @@ class AddressForm extends Component {
               label="Salary"
               fullWidth
               autoComplete="shipping country"
-              onChange={this.handleChange}
+              onChange={this.handleSalaryChange}
             />
           </Grid>
           <Grid item xs={12} sm={6}>
@@ -110,7 +147,7 @@ class AddressForm extends Component {
               label="Department Id"
               fullWidth
               autoComplete="shipping country"
-              onChange={this.handleChange}
+              onChange={this.handleDeptidChange}
             />
           </Grid>
         </Grid>
