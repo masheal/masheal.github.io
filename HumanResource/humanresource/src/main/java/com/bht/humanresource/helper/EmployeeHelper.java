@@ -42,8 +42,7 @@ public class EmployeeHelper {
 
     @Transactional
     public void createEmployee(Employee temp){
-        temp.setId(9999);
-        repo.create(temp.getId(), temp.getName());
+        repo.create(temp.getId(), temp.getName(), temp.getJob(), temp.getManager(), temp.getHireDate(), temp.getSalary(), temp.getDeptId());
     }
 
     public void updateEmployee(int id, Employee temp) {
