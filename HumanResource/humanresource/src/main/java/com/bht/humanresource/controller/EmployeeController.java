@@ -18,9 +18,9 @@ public class EmployeeController {
         return service.getAllEmployees();
     }
 
-    @GetMapping("/get/dept/{deptname}")
-    public List<Employee> getEmployeeByDeptName(@PathVariable int deptname){
-        return service.getEmployeeByDepartment(deptname);
+    @GetMapping("/get/dept/{deptId}")
+    public List<Employee> getEmployeeByDeptId(@PathVariable int deptId){
+        return service.getEmployeeByDeptId(deptId);
     }
 
     @GetMapping("/get/{id}")
@@ -28,14 +28,29 @@ public class EmployeeController {
         return service.getEmployeeById(id);
     }
 
-    @GetMapping("/get/search/name/{keyword}")
-    public List<Employee> getEmployeeByKeyword(@PathVariable String keyword){
-        return service.getEmployeeByKeyword(keyword);
+    @GetMapping("/get/search/name/{keyword}/{num}")
+    public List<Employee> getEmployeeByKeyword(@PathVariable String keyword, @PathVariable int num){
+        return service.getEmployeeByKeyword(keyword, num);
+    }
+
+    @GetMapping("/get/performance/{num}")
+    public List<Employee> getEmployeeByPerformance(@PathVariable int num){
+        return service.getEmployeeByPerformance(num);
     }
 
     @PutMapping("/update/{id}")
     public void updateEmployee(@PathVariable int id, @RequestBody Employee temp){
         service.updateEmployee(id, temp);
+    }
+
+    @PutMapping("/update/incrementPreformance/{id}")
+    public void increasePreformance (@PathVariable int id) {
+        service.increasePreformance(id);
+    }
+
+    @PutMapping("/update/decrementPreformance/{id}")
+    public void decreasePreformance (@PathVariable int id) {
+        service.decreasePreformance(id);
     }
 
     @PostMapping("/new")

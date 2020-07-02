@@ -33,11 +33,23 @@ public class EmployeeService {
         helper.deleteEmployeeById(id);
     }
 
-    public List<Employee> getEmployeeByDepartment(int deptName) {
-        return helper.getEmployeeByDepartment(deptName);
+    public List<Employee> getEmployeeByDeptId(int deptId) {
+        return helper.getEmployeeByDeptId(deptId);
     }
 
-    public List<Employee> getEmployeeByKeyword(String keyword) {
-        return helper.getEmployeeByKeyword(keyword);
+    public List<Employee> getEmployeeByKeyword(String keyword, int num) {
+        return helper.getEmployeeByKeyword(keyword, num);
+    }
+
+    public void increasePreformance(int id) {
+        helper.increasePreformance(id);
+    }
+
+    public void decreasePreformance(int id) {
+        helper.decreasePreformance(id);
+    }
+
+    public List<Employee> getEmployeeByPerformance(int num) {
+        return helper.getEmployeeByPerformance(num);
     }
 }

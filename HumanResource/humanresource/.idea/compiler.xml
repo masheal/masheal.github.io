@@ -10,11 +10,15 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="composite" target="1.8" />
+      <module name="composite (1)" target="1.8" />
       <module name="humanresource" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="composite" options="-parameters" />
+      <module name="composite (1)" options="-parameters" />
       <module name="humanresource" options="-parameters" />
     </option>
   </component>

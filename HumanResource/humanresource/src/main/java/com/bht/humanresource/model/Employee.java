@@ -24,6 +24,7 @@ public class Employee {
     @Column(name = "deptid")
     private int deptId;
 
+    private int performance;
 
     public Employee() {
     }
@@ -87,5 +88,13 @@ public class Employee {
 
     public void setDeptId(int deptId) {
         this.deptId = deptId;
+    }
+
+    public int getPerformance() {
+        return performance;
+    }
+
+    public void setPerformance(int performance) {
+        this.performance = performance;
     }
 }

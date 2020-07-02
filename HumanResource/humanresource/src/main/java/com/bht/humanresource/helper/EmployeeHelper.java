@@ -42,7 +42,11 @@ public class EmployeeHelper {
 
     @Transactional
     public void createEmployee(Employee temp){
-        repo.create(temp.getId(), temp.getName(), temp.getJob(), temp.getManager(), temp.getHireDate(), temp.getSalary(), temp.getDeptId());
+        int id = temp.getId();
+        while (getEmployeeById(id) != null) {
+            id++;
+        }
+        repo.create(id, temp.getName(), temp.getJob(), temp.getManager(), temp.getHireDate(), temp.getSalary(), temp.getDeptId(), temp.getPerformance());
     }
 
     public void updateEmployee(int id, Employee temp) {
@@ -76,20 +80,30 @@ public class EmployeeHelper {
        repo.deleteById(id);
     }
 
-    /**
-     * 1. findByDeptId
-     * @param deptName
-     * @return
-     */
-    public List<Employee> getEmployeeByDepartment(int deptName) {
-        return repo.findAllByDeptId(deptName);
+    public List<Employee> getEmployeeByDeptId(int deptId) {
+        return repo.findAllByDeptId(deptId);
     }
 
-    public List<Employee> getEmployeeByKeyword(String keyword) {
+    public List<Employee> getEmployeeByKeyword(String keyword, int num) {
         List<Employee> res = repo.findAllByNameLikeIgnoreCase(keyword + '%');
-        if (res.size() >= 3) {
-            res = res.subList(0, 3);
+        if (num > 0 && res.size() >= num) {
+            res = res.subList(0, num);
         }
         return res;
+    }
+
+    @Transactional
+    public void increasePreformance(int id) {
+        repo.increase(id);
+    }
+
+    @Transactional
+    public void decreasePreformance(int id) {
+        repo.decrease(id);
+    }
+
+    public List<Employee> getEmployeeByPerformance(int num) {
+        List<Employee> list = repo.findAllByOrderByPerformanceDesc();
+        return list.subList(0, num);
     }
 }

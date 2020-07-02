@@ -31,8 +31,11 @@ public class DepartmentHelper {
 
     @Transactional
     public void createDepartment(Department temp){
-        temp.setId(9999);
-        repo.create(temp.getId(), temp.getName(), temp.getLoc());
+        int id = temp.getId();
+        while (getDepartmentById(id) != null) {
+            id++;
+        }
+        repo.create(id, temp.getName(), temp.getLoc());
     }
 
     public void updateDepartment(int id, Department temp) {
@@ -41,8 +44,12 @@ public class DepartmentHelper {
             return;
         }
         Department department = departmentOptional.get();
-        department.setName(temp.getName());
-        department.setLoc(temp.getLoc());
+        if (temp.getName() != null) {
+            department.setName(temp.getName());
+        }
+        if (temp.getLoc() != null) {
+            department.setLoc(temp.getLoc());
+        }
         repo.save(department);
     }
 
