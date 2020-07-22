@@ -1,0 +1,89 @@
+Basic Functions
+
+Employee
+
+getAllEmployees
+http://localhost:8080/employee/all
+
+getEmployeeByDeptId
+http://localhost:8080/employee/get/dept/20
+
+getEmployeeById
+http://localhost:8080/employee/get/1210
+
+updateEmployee
+http://localhost:8080/employee/update/1210
+
+createEmployee
+http://localhost:8080/employee/new
+{
+    "id": 1216,
+    "name": "SUPERMAN",
+    "job": "SUPERHERO",
+    "manager": 1210,
+    "hireDate": "1973-03-17T00:00:00.000+0000",
+    "salary": 9000.0
+}
+
+deleteEmployeeById
+http://localhost:8080/employee/delete/1216
+
+Department
+
+getAllDepartments
+http://localhost:8080/department/all
+
+getDepartmentByLocation
+http://localhost:8080/department/get/dept/NEW YORK
+
+getDepartmentById
+http://localhost:8080/department/get/10
+
+updateDepartment
+http://localhost:8080/department/update/10
+{
+    "name": "ACCOUNTING",
+    "loc": "ITHACA"
+}
+
+createDepartment
+http://localhost:8080/department/new
+{
+    "id": 10,
+    "name": "AI",
+    "loc": "ANHUI"
+}
+
+deleteDepartmentById
+http://localhost:8080/department/delete/10
+
+SalaryReport
+
+http://localhost:8080/salaryReport/job/salesman
+
+getSalaryReportByJob
+
+New Features
+
+getEmployeeByKeyword
+http://localhost:8080/employee/get/search/name/a/0
+
+http://localhost:8080/employee/get/search/name/ad/0
+
+http://localhost:8080/employee/get/search/name/ad/1
+
+http://localhost:8080/employee/get/search/name/ad/5
+
+increasePreformance
+http://localhost:8080/employee/get/1210
+http://localhost:8080/employee/update/incrementPreformance/1210
+
+decreasePreformance
+http://localhost:8080/employee/update/decreasePreformance/1210
+
+getEmployeeByPerformance
+http://localhost:8080/employee/get/performance/0
+
+http://localhost:8080/employee/get/performance/1
+
+http://localhost:8080/employee/get/performance/5

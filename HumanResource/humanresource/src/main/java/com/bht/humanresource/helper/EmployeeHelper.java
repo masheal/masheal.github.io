@@ -104,6 +104,6 @@ public class EmployeeHelper {
 
     public List<Employee> getEmployeeByPerformance(int num) {
         List<Employee> list = repo.findAllByOrderByPerformanceDesc();
-        return list.subList(0, num);
+        return num == 0 ? list : list.subList(0, num);
     }
 }

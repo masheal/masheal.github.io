@@ -14,7 +14,7 @@ public class EmployeeController {
     private EmployeeService service;
 
     @RequestMapping(value="/all", method= RequestMethod.GET)
-    public List<Employee> getEmployees(){
+    public List<Employee> getAllEmployees(){
         return service.getAllEmployees();
     }
 
@@ -48,13 +48,13 @@ public class EmployeeController {
         service.increasePreformance(id);
     }
 
-    @PutMapping("/update/decrementPreformance/{id}")
+    @PutMapping("/update/decreasePerformance/{id}")
     public void decreasePreformance (@PathVariable int id) {
         service.decreasePreformance(id);
     }
 
     @PostMapping("/new")
-    public void updateEmployee(@RequestBody Employee temp){
+    public void createEmployee(@RequestBody Employee temp){
         service.newEmployee(temp);
     }
 

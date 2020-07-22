@@ -8,7 +8,7 @@ import java.util.Iterator;
 import java.util.List;
 
 @Repository
-public class EmployeeDAO {
+public class  EmployeeDAO {
 
     static List<Employee> employees;
 

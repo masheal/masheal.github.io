@@ -14,7 +14,7 @@ public class DepartmentController {
     private DepartmentService service;
 
     @RequestMapping(value="/all", method= RequestMethod.GET)
-    public List<Department> getDepartments(){
+    public List<Department> getAllDepartments(){
         return service.getAllDepartments();
     }
 
@@ -34,7 +34,7 @@ public class DepartmentController {
     }
 
     @PostMapping("/new")
-    public void updateDepartment(@RequestBody Department temp){
+    public void createDepartment(@RequestBody Department temp){
         service.newDepartment(temp);
     }
 
