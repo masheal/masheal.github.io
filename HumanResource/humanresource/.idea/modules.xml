@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../../../CCR_Contractor/CCR_source_code/springboottest/composite.iml" filepath="$PROJECT_DIR$/../../../CCR_Contractor/CCR_source_code/springboottest/composite.iml" />
       <module fileurl="file://$PROJECT_DIR$/humanresource.iml" filepath="$PROJECT_DIR$/humanresource.iml" />
     </modules>
   </component>
